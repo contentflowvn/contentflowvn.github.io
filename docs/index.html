@@ -3,76 +3,401 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ContentFlow Studio helps creators automate short-form video production and publishing workflows.">
 
   <title>ContentFlow Studio</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      line-height: 1.6;
-      color: #222;
-    }
-
-    h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      margin-top: 40px;
-    }
-
-    .subtitle {
-      font-size: 20px;
-      color: #555;
-    }
-
-    .feature {
-      margin-bottom: 15px;
-    }
-
-    .footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f8fc;
+      color: #1e2430;
+      line-height: 1.65;
     }
 
     a {
-      color: #0066cc;
+      color: #645cff;
       text-decoration: none;
     }
 
     a:hover {
       text-decoration: underline;
     }
+
+    .container {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e8eaf0;
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 700;
+      color: #171a23;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid #dfe1ff;
+      border-radius: 999px;
+      background: #f0efff;
+      color: #554de8;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: clamp(40px, 7vw, 68px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      color: #161923;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 26px auto 0;
+      color: #5c6472;
+      font-size: 19px;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      max-width: 700px;
+      margin-bottom: 32px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      margin: 0 0 10px;
+      color: #171a23;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: #677080;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e6e8ef;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 5px 18px rgba(32, 39, 57, 0.04);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #1c202a;
+    }
+
+    .card p {
+      margin: 0;
+      color: #687181;
+      font-size: 15px;
+    }
+
+    .workflow {
+      background: #171923;
+      color: #ffffff;
+      border-radius: 22px;
+      padding: 40px;
+    }
+
+    .workflow h2 {
+      margin-top: 0;
+      font-size: 30px;
+    }
+
+    .workflow ol {
+      margin: 24px 0 0;
+      padding-left: 22px;
+    }
+
+    .workflow li {
+      margin-bottom: 12px;
+      color: #d9dce5;
+    }
+
+    .legal {
+      background: #ffffff;
+      border: 1px solid #e6e8ef;
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 36px 0;
+      background: #ffffff;
+      border-top: 1px solid #e8eaf0;
+      color: #707887;
+      font-size: 14px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+
+      .workflow {
+        padding: 28px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <h1>ContentFlow Studio</h1>
+<header>
+  <div class="container nav">
+    <div class="brand">ContentFlow Studio</div>
 
-  <p class="subtitle">
-    Automated short-form video content creation and publishing workflow.
-  </p>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
 
-  <p>
-    ContentFlow Studio helps creators prepare, organize, generate, process,
-    and publish short-form educational and storytelling video content through
-    an automated production workflow.
-  </p>
+<main>
 
-  <p>
-    The platform is designed to simplify repetitive content production tasks
-    while allowing creators to maintain control over the final content and
-    publishing process.
-  </p>
+  <section class="hero">
+    <div class="container">
 
-  <h2>What ContentFlow Studio Does</h2>
+      <div class="badge">Short-form content automation</div>
 
-  <div class="feature">
-    <strong>Content Planning</strong><br>
-    Organizes video ideas, topics, scripts, captions, and publishing status.
+      <h1>
+        Create, process and publish short-form video content more efficiently.
+      </h1>
+
+      <p>
+        ContentFlow Studio helps creators organize ideas, prepare storytelling
+        scripts, generate media assets, process narration and video, and manage
+        publishing workflows through supported platform integrations.
+      </p>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>What ContentFlow Studio Does</h2>
+        <p>
+          A structured workflow for managing the major stages of short-form
+          content production.
+        </p>
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <h3>Content Planning</h3>
+          <p>
+            Organize content ideas, topics, scripts, captions and production
+            status in a consistent workflow.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Storytelling Scripts</h3>
+          <p>
+            Prepare structured short-form scripts designed for educational,
+            historical and informational storytelling.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Visual Production</h3>
+          <p>
+            Prepare images, carousel assets and vertical visual content for
+            short-form video formats.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Voice Processing</h3>
+          <p>
+            Create narration workflows with timing, pacing and audio processing
+            suited to individual video scenes.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Video Rendering</h3>
+          <p>
+            Combine visuals, narration and background audio into completed
+            vertical video files.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Publishing Workflow</h3>
+          <p>
+            Connect authorized accounts and supported APIs to manage content
+            publishing and publishing status.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="workflow">
+
+        <h2>How the Workflow Works</h2>
+
+        <ol>
+          <li>Create or select a content idea.</li>
+          <li>Prepare the script, caption and visual direction.</li>
+          <li>Create supporting visual assets.</li>
+          <li>Generate and process narration.</li>
+          <li>Render the final short-form video.</li>
+          <li>Publish content through an authorized connected platform.</li>
+        </ol>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Built for Storytelling</h2>
+        <p>
+          ContentFlow Studio is designed for creators working with educational,
+          historical, informational and narrative-driven short-form content.
+        </p>
+      </div>
+
+      <div class="legal">
+
+        <p>
+          Automated systems assist with production tasks, while users remain
+          responsible for reviewing their content and ensuring that published
+          material complies with applicable laws, intellectual property rights
+          and third-party platform policies.
+        </p>
+
+        <p>
+          Connected third-party accounts are accessed only within permissions
+          explicitly granted by the user.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Legal & Privacy</h2>
+        <p>
+          Learn more about the terms governing the service and how information
+          is handled.
+        </p>
+      </div>
+
+      <div class="legal">
+        <p>
+          <a href="terms.html"><strong>Terms of Service</strong></a>
+          &nbsp;&nbsp;•&nbsp;&nbsp;
+          <a href="privacy.html"><strong>Privacy Policy</strong></a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-content">
+
+    <div>
+      <strong>ContentFlow Studio</strong><br>
+      Short-form content automation and publishing workflow.
+    </div>
+
+    <div class="footer-links">
+      <a href="terms.html">Terms of Service</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
